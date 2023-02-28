@@ -1,0 +1,13 @@
+:root{
+  --accent: "";
+  --custom-padding: "";
+}
+
+div {
+  background-color: var(--accent);
+  padding: var(--custom-padding);
+}
+
+div:hover{
+  color: prink;
+}

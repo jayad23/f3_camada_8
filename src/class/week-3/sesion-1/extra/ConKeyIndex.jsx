@@ -6,7 +6,7 @@ const ConKeyIndex = ({ items }) => {
       <h1>Con Index como Key</h1>
       {
         items.map((item, index) => (
-          <input key={index} defaultValue={item.value} />
+          <input key={item.id} defaultValue={item.value} />
         ))
       }
     </div>

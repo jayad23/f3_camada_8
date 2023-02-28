@@ -6,7 +6,7 @@ const SinKeys = ({ items }) => {
       <h1>Sin Key</h1>
       {
         items.map((item) => (
-          <input defaultValue={item.value} />
+          <input key={item.id} defaultValue={item.value} />
         ))
       }
     </div>
