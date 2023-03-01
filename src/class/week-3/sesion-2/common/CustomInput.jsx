@@ -11,7 +11,7 @@ export const CustomInput = ({ name }) => {
   return (
     <Container>
       <span>{name}:</span>
-      <Input type={name !== "Password" ? "text" : "password"} placeholder={`Enter your ${name}`} />
+      <Input type={name.includes("Password") ? "password" : "text"} placeholder={`Enter your ${name}`} />
     </Container>
   )
 };
