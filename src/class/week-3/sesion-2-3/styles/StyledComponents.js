@@ -18,7 +18,6 @@ export const Container = styled.div`
   flex-direction: column;
   text-align: left;
   ${({ content }) => content === "evenly" && css`
-    border: 1px solid red;
     align-items: center;
     justify-content: space-evenly;
     height: 100vh;
@@ -55,4 +54,19 @@ export const Button = styled.button`
   &:active{
     transform: scale(.9);
   }
+`;
+
+export const MenuButton = styled.button`
+  background: none;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 8px;
+  padding-bottom: 5px;
+  &:hover{
+    color: #F55050;
+  };
+  ${({ from }) => from === "true" && css`
+    color: #F55050;
+    border-bottom: 1px solid #F55050;
+  `}  
 `;

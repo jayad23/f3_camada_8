@@ -11,15 +11,4 @@ export const checkForNumber = (str) => {
   const numbers = ex.map(el => Number(el));
   const isNumbers = numbers.some(el => !isNaN(el));
   return isNumbers;
-}
-
-export const validateValues = (type) => {
-  switch (type) {
-    case "name":
-      
-      break;
-  
-    default:
-      break;
-  }
-}
+};

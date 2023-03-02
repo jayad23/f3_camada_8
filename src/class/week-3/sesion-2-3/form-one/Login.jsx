@@ -1,23 +1,32 @@
-import React from 'react'
-import { FormContainer, Container, Button } from '../styles/StyledComponents'
+import React, { useState } from 'react'
+import { Layout } from '../Layout';
 import { CustomInput } from '../common/CustomInput'
 const logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/KV-logo.svg/1200px-KV-logo.svg.png";
 
-const Login = () => {
+const Login = ({ handleValues, handleCancel }) => {
+  const [values, setValues] = useState({ email: "", password: "" });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleValues(values);
+  };
+
+  const handleChange = (e) => {
+    const key = e.target.name.toLowerCase();
+    const value = e.target.value;
+    setValues({ ...values, [key]: value });
+  }
+
   return (
-    <FormContainer
-      from="login"
-    >
-      <div style={{ width: "100%", textAlign: "center" }}>
-        <img src={logo} width={120} />
-      </div>
-      <CustomInput name="Email" />
-      <CustomInput name="Password" />
-      <Container content="row">
-        <Button btn="cancel">Cancel</Button>
-        <Button btn="submit">Submit</Button>
-      </Container>
-    </FormContainer>
+    <Layout from="login" handleCancel={handleCancel} >
+      <form id="login" onSubmit={handleSubmit}>
+        {
+          ["Email", "Password"].map(field => (
+            <CustomInput key={field} name={field} onChange={handleChange} />
+          ))
+        }
+      </form>
+    </Layout>
   )
 }
 

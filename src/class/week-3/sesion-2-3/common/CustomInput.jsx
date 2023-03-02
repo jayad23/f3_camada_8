@@ -7,19 +7,12 @@ export const Input = styled.input`
   outline: none;
   border: 1px solid #4E6E81;
 `
-const REGEX = /^[a-z0-9]+$/i;
-export const CustomInput = ({ name, onChange, error }) => {
+export const CustomInput = ({ name, onChange }) => {
   const reName = name.trim().toLowerCase().replaceAll(" ", "");
-  //console.log(reName)
   return (
-    <Container>
+    <Container from="login">
       <span>{name}:</span>
       <Input name={reName} onChange={onChange} type={name.includes("Password") ? "password" : "text"} placeholder={`Enter your ${name}`} />
-      {
-        error && error['displayError'] && (
-          <span style={{ color: "crimson", fontSize: "10px", margin: "2px" }}>{error['displayError']}</span>
-        )
-      }
     </Container>
   )
 };
