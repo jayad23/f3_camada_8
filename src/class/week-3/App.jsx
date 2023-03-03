@@ -1,15 +1,13 @@
 import React from 'react'
-import Login from './sesion-2-3/form-one/Login'
-import Register from './sesion-2-3/form-two/Register'
-import styled from "styled-components";
-import { Container } from './sesion-2-3/styles/StyledComponents';
-import User from './sesion-2-3/user/User';
+import { Container } from './sesion-2/styles/StyledComponents';
+import CounterFunction from './sesion-3/CounterFunction';
+import CounterClass from './sesion-3/CounterClass';
 
 const App = () => {
   return (
-    <Container content="evenly">
-      <Login />
-      <Register />
+    <Container className='App' content="evenly">
+      <CounterFunction value={5} />
+      <CounterClass value={8} />
     </Container>
   )
 }
