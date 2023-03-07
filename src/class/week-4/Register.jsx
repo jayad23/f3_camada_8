@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { CustomInput, Input } from '../common/CustomInput'
-import { FormContainer, Container, Button } from '../styles/StyledComponents'
+import { Input } from '../week-3/sesion-2/common/CustomInput';
+import { FormContainer, Container, Button } from '../week-3/sesion-2/styles/StyledComponents';
 const logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/KV-logo.svg/1200px-KV-logo.svg.png";
 
 const Register = () => {
