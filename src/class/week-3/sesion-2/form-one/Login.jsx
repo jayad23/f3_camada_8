@@ -1,20 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Input } from '../common/CustomInput';
 import { FormContainer, Container, Button } from '../styles/StyledComponents'
 //import { CustomInput } from '../common/CustomInput'
 const logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/KV-logo.svg/1200px-KV-logo.svg.png";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("email:", email);
-    console.log("Password:", password);
-    setEmail("");
-    setPassword("");
-  };
 
   return (
     <FormContainer
@@ -23,7 +13,7 @@ const Login = () => {
       <div style={{ width: "100%", textAlign: "center" }}>
         <img src={logo} width={120} />
       </div>
-      <form id="login-form" onSubmit={handleSubmit}>
+      <form id="login-form">
         <Container>
           <label>Email:</label>
           <Input

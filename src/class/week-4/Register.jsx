@@ -1,26 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Input } from '../week-3/sesion-2/common/CustomInput';
 import { FormContainer, Container, Button } from '../week-3/sesion-2/styles/StyledComponents';
 const logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/KV-logo.svg/1200px-KV-logo.svg.png";
 
 const Register = () => {
-  const [values, setValues] = useState({
-    name: "",
-    email: "",
-    password: "",
-    repeatpassword: ""
-  });
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-    console.log({ values });
-    setValues({
-      name: "",
-      email: "",
-      password: "",
-      repeatpassword: ""
-    });
-  };
 
   return (
     <FormContainer
@@ -29,7 +12,7 @@ const Register = () => {
       <div style={{ width: "100%", textAlign: "center" }}>
         <img src={logo} width={120} />
       </div>
-      <form id="register-form" onSubmit={onSubmit} >
+      <form id="register-form">
         <Container>
           <label>Name:</label>
           <Input
