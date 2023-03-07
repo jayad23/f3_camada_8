@@ -8,11 +8,16 @@ export const Input = styled.input`
   border: 1px solid #4E6E81;
 `
 
-export const CustomInput = ({ name }) => {
+export const CustomInput = ({ name, value, setChange }) => {
   return (
     <Container>
       <span>{name}:</span>
-      <Input type={name.includes("Password") ? "password" : "text"} placeholder={`Enter your ${name}`} />
+      <Input
+        type={name.includes("Password") ? "password" : "text"}
+        placeholder={`Enter your ${name}`}
+        value={value}
+        onChange={(e) => setChange(e.target.value)}
+      />
     </Container>
   )
 };
