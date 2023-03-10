@@ -4,12 +4,13 @@ import { FormContainer, Container, Button } from '../week-3/sesion-2/styles/Styl
 //import { CustomInput } from '../common/CustomInput'
 const logo = "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/KV-logo.svg/1200px-KV-logo.svg.png";
 
-const Login = () => {
+const Login = ({ handleCompareValues }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleCompareValues({ email, password });
     console.log({ email }, { password });
     setEmail("");
     setPassword("");
@@ -20,6 +21,7 @@ const Login = () => {
       from="login"
     >
       <div style={{ width: "100%", textAlign: "center" }}>
+        <h2>Login</h2>
         <img src={logo} width={120} />
       </div>
       <form id="login-form" onSubmit={handleSubmit}>
